@@ -1,6 +1,6 @@
 
 
-.App {
+ .App {
   background-color: white;
   padding: 2rem;
   display: inline-block;
@@ -66,4 +66,9 @@ button:hover {
 .ShowPassword{
   margin-left: 100px;
   margin-top: -25px;
-}
+} 
+
+/* .App {
+  font-family: sans-serif;
+  text-align: center;
+} */
