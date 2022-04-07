@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useFormik } from "formik";
+import { useFormik, Formik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from 'react-router-dom'
 
@@ -7,14 +7,13 @@ import { useHistory } from 'react-router-dom'
 const LoginPage = () => {
     const[showPassword1, setShowPassword1] = useState(false);
     const history = useHistory()
-  const formik = useFormik({
-    initialValues: {
-      userName: "",
-      password: ""
-    },
-    validationSchema: Yup.object({
-      userName: Yup.string().required("Required"),
-      password: Yup.string().required("Required"),
+    const formik = useFormik({
+        initialValues: {
+        userName: "",
+        password: "" },
+        validationSchema: Yup.object({
+        userName: Yup.string().required("Required"),
+        password: Yup.string().required("Required"),
       
     }),
     onSubmit: (values) => {
@@ -29,6 +28,7 @@ const LoginPage = () => {
  }
  
   return (
+    <Formik>
     <form onSubmit={formik.handleSubmit}>
               <h1> Login </h1>
 
@@ -57,6 +57,7 @@ const LoginPage = () => {
       <button type="submit" >Submit</button>
       <label className="ShowPassword" onClick={() => showPassword()}>Show Password</label>
     </form>
+    </Formik>
   );
 };
 
