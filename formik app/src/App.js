@@ -20,7 +20,7 @@ const App = () => {
 }
 export default App
 
-                       // Formik field array example
+                      //  Formik field array example
 
 // import React from "react";
 // import FriendList from "./FieldArray";

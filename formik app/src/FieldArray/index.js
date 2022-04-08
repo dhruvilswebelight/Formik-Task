@@ -14,7 +14,7 @@ const FriendList = () => (
       render={({ values }) => (
         <Form>
           <FieldArray
-            name="friends"
+            name="friends" 
             render={(arrayHelpers) => (
               <div>
                 {values.friends && values.friends.length > 0 ? (
@@ -23,25 +23,27 @@ const FriendList = () => (
                       <Field name={`friends.${index}`} />
                       <button
                         type="button"
-                        onClick={() => arrayHelpers.remove(index)}
-                      >
+                        onClick={() => arrayHelpers.remove(index)}>
                         Remove
                       </button>
                       <button
                         type="button"
-                        onClick={() => arrayHelpers.insert(index, "")}
-                      >
+                     
+                        onClick={() => arrayHelpers.insert(index, "")} >
                         Insert
                       </button>
                     </div>
                   ))
                 ) : (
-                  <button type="button" onClick={() => arrayHelpers.push("")}>
+                  <button type="button"  
+                          className="button"
+                  onClick={() => arrayHelpers.push("")}>
                     Add a friend
                   </button>
                 )}
                 <div>
-                  <button type="submit">Submit</button>
+                  <button type="submit"
+                          className="button">Submit</button>
                 </div>
               </div>
             )}
